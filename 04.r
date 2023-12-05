@@ -1,4 +1,4 @@
-data <- readLines("input_03.txt") |>
+data <- readLines("input_04.txt") |>
     strsplit(": |\\| +") |>
     lapply(strsplit, "\\s+")
 
