@@ -1,14 +1,14 @@
 library(stringr)
 
 instructions <- readLines("input_08.txt", n = 1) |>
-    str_split("") |>
+    strsplit("") |>
     unlist()
 
 data <- readLines("input_08.txt")[-(1:2)]
 
 map <- data |>
     str_remove_all("= \\(|,|\\)") |>
-    str_split(" ") |>
+    strsplit(" ") |>
     sapply(\(x) {
         out <- list(list("L" = x[2], "R" = x[3]))
         names(out) <- x[1]

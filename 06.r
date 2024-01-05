@@ -1,3 +1,5 @@
+library(stringr)
+
 n_wins <- function(t, record) {
     distance <- 1:t * (t - 1:t)
     sum(distance > record)
@@ -8,7 +10,6 @@ data <- readLines("input_06.txt") |>
     lapply(\(x) as.numeric(x[2:length(x)])) |>
     setNames(c("time", "record"))
 
-library(stringr)
 data2 <- readLines("input_06.txt") |>
     strsplit(": +") |>
     lapply(\(x) as.numeric(str_replace_all(x[2], " ", ""))) |>
